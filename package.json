@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "foundation-zurb-template",
   "version": "1.0.0",
   "description": "Official ZURB Template for Foundation for Sites.",
@@ -8,7 +9,25 @@
     "build": "gulp build --production",
     "deploy": "gulp deploy --production"
   },
-  "author": "ZURB <foundation@zurb.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smerth/mockup-coconut-news"
+  },
+  "bugs": {
+    "url": "https://github.com/smerth/mockup-coconut-news/issues"
+  },
+  "homepage": "https://github.com/smerth/mockup-coconut-news#readme",
+  "keywords": [
+    "foundation-6",
+    "panini",
+    "handlebars",
+    "gulp"
+  ],
+  "author": {
+    "name": "Stephen Merth",
+    "email": "stephen.merth@gmail.com",
+    "url": "http://smerth.github.io/"
+  },
   "license": "MIT",
   "dependencies": {
     "foundation-sites": "^6.5.3",
@@ -51,18 +70,9 @@
   "resolutions": {
     "gift": "^0.10.2"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/zurb/foundation-zurb-template.git"
-  },
-  "bugs": {
-    "url": "https://github.com/zurb/foundation-sites/issues",
-    "email": "foundation@zurb.com"
-  },
   "babel": {
     "presets": [
       "es2015"
     ]
-  },
-  "private": true
+  }
 }
