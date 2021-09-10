@@ -1,8 +1,8 @@
 {
   "private": true,
-  "name": "foundation-zurb-template",
+  "name": "foundation-6-mockup-for-drupal-8-theme",
   "version": "1.0.0",
-  "description": "Official ZURB Template for Foundation for Sites.",
+  "description": "A mockup in Foundation 6 of an article page and a contributor page for a Drupal 8 theme.",
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
