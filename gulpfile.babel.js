@@ -12,9 +12,7 @@ import fs from "fs";
 import webpackStream from "webpack-stream";
 import webpack2 from "webpack";
 import named from "vinyl-named";
-
-// deploy to github pages
-// import deploy from "gulp-gh-pages";
+import ghPages from "gulp-gh-pages";
 
 /**
  * Deploy site to production (Push build to gh-pages)
@@ -22,8 +20,6 @@ import named from "vinyl-named";
 // gulp.task("deploy", function() {
 //   return gulp.src("dist/**/*").pipe(deploy());
 // });
-
-import ghPages from "gulp-gh-pages";
 
 // Push the dist folder to gh-pages
 gulp.task("deploy", gulp.series(pushghpages));
@@ -81,7 +77,7 @@ function pages() {
         layouts: "src/layouts/",
         partials: "src/partials/",
         data: "src/data/",
-        helpers: "src/helpers/"
+        helpers: "src/helpers/",
       })
     )
     .pipe(gulp.dest(PATHS.dist));
@@ -99,7 +95,7 @@ function styleGuide(done) {
     "src/styleguide/index.md",
     {
       output: PATHS.dist + "/styleguide.html",
-      template: "src/styleguide/template.html"
+      template: "src/styleguide/template.html",
     },
     done
   );
@@ -114,12 +110,12 @@ function sass() {
       .pipe($.sourcemaps.init())
       .pipe(
         $.sass({
-          includePaths: PATHS.sass
+          includePaths: PATHS.sass,
         }).on("error", $.sass.logError)
       )
       .pipe(
         $.autoprefixer({
-          browsers: COMPATIBILITY
+          browsers: COMPATIBILITY,
         })
       )
       // Comment in the pipe below to run UnCSS in production
@@ -138,12 +134,12 @@ let webpackConfig = {
         test: /.js$/,
         use: [
           {
-            loader: "babel-loader"
-          }
-        ]
-      }
-    ]
-  }
+            loader: "babel-loader",
+          },
+        ],
+      },
+    ],
+  },
 };
 // Combine JavaScript into one file
 // In production, the file is minified
@@ -156,7 +152,7 @@ function javascript() {
     .pipe(
       $.if(
         PRODUCTION,
-        $.uglify().on("error", e => {
+        $.uglify().on("error", (e) => {
           console.log(e);
         })
       )
@@ -174,7 +170,7 @@ function images() {
       $.if(
         PRODUCTION,
         $.imagemin({
-          progressive: true
+          progressive: true,
         })
       )
     )
@@ -185,7 +181,7 @@ function images() {
 function server(done) {
   browser.init({
     server: PATHS.dist,
-    port: PORT
+    port: PORT,
   });
   done();
 }
