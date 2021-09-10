@@ -15,11 +15,13 @@
   #site-logo-path {
     fill: $white;
   }
-  .site-name,
   .site-slogan {
     line-height: 1;
+    color: $primary-color;
   }
   .site-name {
+    line-height: 1;
+    font-size: 64;
     color: $primary-color;
   }
   ul {
