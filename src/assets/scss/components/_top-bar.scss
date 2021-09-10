@@ -1,7 +1,9 @@
 .top-bar {
   color: $white;
   height: 225px;
-  background-image: url("/assets/img/coconut-tree.jpg");
+  // How to add path prefix only on build!
+  background-image: url("/mockup-coconut-news/assets/img/coconut-tree.jpg");
+  // background-image: "url(" + require("/assets/img/coconut-tree.jpg") + ")";
   background-size: cover;
   background-position-y: 50%;
   #site-logo {

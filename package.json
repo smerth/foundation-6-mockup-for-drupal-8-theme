@@ -48,6 +48,9 @@
     "webpack-stream": "^3.2.0",
     "yargs": "^3.8.0"
   },
+  "resolutions": {
+    "gift": "^0.10.2"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/zurb/foundation-zurb-template.git"
