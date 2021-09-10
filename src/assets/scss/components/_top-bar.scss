@@ -1,9 +1,8 @@
 .top-bar {
   color: $white;
   height: 225px;
-  // How to add path prefix only on build!
-  background-image: url("/mockup-coconut-news/assets/img/coconut-tree.jpg");
-  // background-image: "url(" + require("/assets/img/coconut-tree.jpg") + ")";
+  // How to add path prefix only on build???
+  background-image: url("/foundation-6-mockup-for-drupal-8-theme/assets/img/coconut-tree.jpg");
   background-size: cover;
   background-position-y: 50%;
   #site-logo {
